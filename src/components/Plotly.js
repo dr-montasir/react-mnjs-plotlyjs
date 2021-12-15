@@ -102,6 +102,19 @@ const Plotly = () => {
         <h3>Links:</h3>
         <ul>
           <li>
+            <b>GitHub</b>:<br />
+            <a
+              href="https://github.com/dr-montasir/react-mnjs-plotlyjs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/dr-montasir/react-mnjs-plotlyjs
+            </a>
+          </li>
+
+          <br />
+
+          <li>
             <b>MNJS</b>:<br />
             <a
               href="https://www.npmjs.com/package/mnjs"
