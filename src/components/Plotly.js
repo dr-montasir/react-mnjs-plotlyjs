@@ -6,10 +6,11 @@ const Plotly = () => {
   const ROTATION_MATRIX_2D = mnjs.range(0, 360, 15);
 
   // Color Manipulation
-  const randomRedColor = mnjs.rib(0, 220),
-    randomGreenColor = mnjs.rib(0, 180),
-    randomBlueColor = mnjs.rib(0, 240),
-    randomOpacity = mnjs.divi(mnjs.rib(2, 6), 10);
+  const r = mnjs.rib(0, 220),
+    g = mnjs.rib(0, 180),
+    b = mnjs.rib(0, 240),
+    o = mnjs.divi(mnjs.rib(2, 6), 10),
+    randomColor = `rgb(${r}, ${g}, ${b}, ${o})`;
 
   // Adjust Point Radius
   const pointRadius = mnjs.rib(8, 19);
@@ -27,10 +28,10 @@ const Plotly = () => {
               y: yValue,
               type: 'line',
               mode: 'lines+markers',
-              opacity: `${randomOpacity}`,
+              opacity: `${o}`,
               marker: {
                 size: `${pointRadius}`,
-                color: `rgb(${randomRedColor},${randomGreenColor},${randomBlueColor})`,
+                color: randomColor,
                 line: {
                   color: 'black',
                   width: 2,
@@ -56,10 +57,10 @@ const Plotly = () => {
               x: xValue,
               y: yValue,
               type: 'bar',
-              opacity: `${randomOpacity}`,
+              opacity: `${o}`,
               width: 10,
               marker: {
-                color: `rgb(${randomRedColor},${randomGreenColor},${randomBlueColor})`,
+                color: randomColor,
                 line: {
                   color: 'black',
                   width: 2,
@@ -81,16 +82,13 @@ const Plotly = () => {
         <h3>Random Values</h3>
         <div
           style={{
-            backgroundColor: `rgb(${randomRedColor},${randomGreenColor}, ${randomBlueColor}, ${randomOpacity})`,
+            backgroundColor: randomColor,
             padding: '10px',
             textAlign: 'center',
           }}
         >
           <p>
-            <b>
-              Color : rgb({randomRedColor}, {randomGreenColor},{' '}
-              {randomBlueColor}, {randomOpacity})
-            </b>
+            <b>Color : {randomColor}</b>
           </p>
           <p>
             <b>Point Radius : {pointRadius} px</b>
