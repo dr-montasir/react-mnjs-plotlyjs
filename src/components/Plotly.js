@@ -78,7 +78,7 @@ const Plotly = () => {
 
       <br />
 
-      <div class="plot">
+      <div className="plot">
         <h3>Random Values</h3>
         <div
           style={{
